@@ -1,0 +1,35 @@
+.content-header hr {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    border-top: 1px solid #B3B3B3;
+}
+
+.main-footer {
+    background: #fff;
+    padding: 5px;
+    padding-left: 15px;
+    color: #444;
+    border-top: 1px solid #d2d6de;
+}
+
+.logo-lg img {
+    height: 50px;
+    margin: 10px;
+}
+
+.logo-mini img {
+    height: 35px;
+}
+
+.login {
+    margin: 0;
+    padding-top: 15px;
+}
+
+.kodePos-addon {
+    min-width: 100px;
+}
+
+.kodePos-addon1 {
+    min-width: 100px;
+}
