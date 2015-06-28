@@ -98,7 +98,7 @@ function LoadMap(lokasi) {
 
 	map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-	loadUsaha();
+	loadUsaha('proses/daftar_usaha.php');
 }
 
 // Reset Marker dan Menambahkan Semua Marker dari Array Locations
@@ -204,22 +204,18 @@ function ListenKelurahanSelect() {
 		$('#kelurahan, #kecamatan').trigger("liszt:updated");
 	});
 	
-	$("#kelurahan").on("change", function () {
-		if($(this).val() == '') return;
+	$("#search_map").on("submit", function( event ) {
+		event.preventDefault();
 		
-		loadUsaha($(this).val());
+		var url = $(this).attr('action');
+		var data = $(this).serialize();
+		loadUsaha(url, data);
 	});
 }
 
 // Load Data JSON Usaha Dan Simpan Di Array Locations
-function loadUsaha(idKelurahan) {
-	if(idKelurahan) {
-		var data = {id_kelurahan: idKelurahan};
-	} else {
-		var data = {};
-	}
-	
-	var jqxhr = $.getJSON("proses/daftar_usaha.php", data, function(result) {
+function loadUsaha(url, data) {	
+	var jqxhr = $.getJSON(url, data, function(result) {
 		if(result.status == 200) {
 			var daftar_usaha = result.usaha;
 			

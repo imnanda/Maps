@@ -96,14 +96,14 @@ include "nav.html";
                 <div class="span3">
                     <div class="property-filter pull-right">
                         <div class="content">
-                            <form method="get" action="?">
+                            <form method="get" action="proses/daftar_usaha.php" id="search_map">
                                 <div class="location control-group">
                                     <label class="control-label" for="kecamatan">
                                         Pilih Kecamatan
                                     </label>
 
                                     <div class="controls">
-                                        <select id="kecamatan">
+                                        <select id="kecamatan" name="id_kecamatan">
                                             <?php
                                             $res = mysql_query("SELECT idKecamatan, namaKecamatan FROM kecamatan ORDER BY namaKecamatan");
                                             if ($res === false) {
@@ -131,7 +131,7 @@ include "nav.html";
                                     </label>
 
                                     <div class="controls">
-                                        <select id="kelurahan">
+                                        <select id="kelurahan" name="id_kelurahan">
 											<option value="">Pilih Kecamatan</option>
                                             <?php
                                             $res = mysql_query("SELECT * FROM kelurahan ORDER BY namaKelurahan");
@@ -153,30 +153,8 @@ include "nav.html";
                                     <!-- /.controls -->
                                 </div>
 
-                                <div class="price-from control-group">
-                                    <label class="control-label" for="inputPriceFrom">
-                                        Price from
-                                    </label>
-
-                                    <div class="controls">
-                                        <input type="text" id="inputPriceFrom" name="inputPriceFrom">
-                                    </div>
-                                    <!-- /.controls -->
-                                </div>
-                                <!-- /.control-group -->
-
-                                <div class="price-to control-group">
-                                    <label class="control-label" for="inputPriceTo">
-                                        Price to
-                                    </label>
-
-                                    <div class="controls">
-                                        <input type="text" id="inputPriceTo" name="inputPriceTo">
-                                    </div>
-                                    <!-- /.controls -->
-                                </div>
                                 <div class="form-actions">
-                                    <!--input type="submit" value="Cari" class="btn btn-primary btn-large"-->
+                                    <input type="submit" value="Cari" class="btn btn-primary btn-large">
                                 </div>
                                 <!-- /.form-actions -->
                             </form>
