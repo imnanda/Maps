@@ -99,12 +99,12 @@ include "nav.html";
                         <div class="content">
                             <form method="get" action="?">
                                 <div class="location control-group">
-                                    <label class="control-label" for="inputLocation">
+                                    <label class="control-label" for="kecamatan">
                                         Pilih Kecamatan
                                     </label>
 
                                     <div class="controls">
-                                        <select id="inputType">
+                                        <select id="kecamatan">
                                             <?php
                                             $res = mysql_query("SELECT idKecamatan, namaKecamatan FROM kecamatan ORDER BY namaKecamatan");
                                             if ($res === false) {
@@ -113,8 +113,8 @@ include "nav.html";
                                             $i = 1;
                                             while ($data = mysql_fetch_array($res)) {
                                                 ?>
-                                                <option
-                                                    value="<?php echo $data['idKecamatan']; ?>"><?php echo $data['namaKecamatan']; ?>
+                                                <option value="<?php echo $data['idKecamatan']; ?>">
+													<?php echo $data['namaKecamatan']; ?>
                                                 </option>
                                                 <?php
                                                 $i++;
@@ -127,22 +127,23 @@ include "nav.html";
                                 <!-- /.control-group -->
 
                                 <div class="type control-group">
-                                    <label class="control-label" for="inputType">
+                                    <label class="control-label" for="kelurahan">
                                         Pilih Kelurahan
                                     </label>
 
                                     <div class="controls">
-                                        <select id="inputType">
+                                        <select id="kelurahan">
+											<option value="">Pilih Kecamatan</option>
                                             <?php
-                                            $res = mysql_query("SELECT idKelurahan, namaKelurahan FROM kelurahan ORDER BY namaKelurahan");
+                                            $res = mysql_query("SELECT * FROM kelurahan ORDER BY namaKelurahan");
                                             if ($res === false) {
                                                 die(mysql_error());
                                             }
                                             $i = 1;
                                             while ($data = mysql_fetch_array($res)) {
                                                 ?>
-                                                <option
-                                                    value="<?php echo $data['idKelurahan']; ?>"><?php echo $data['namaKelurahan']; ?>
+                                                <option value="<?php echo $data['idKelurahan']; ?>" class="<?php echo $data['idKecamatan']; ?>">
+													<?php echo $data['namaKelurahan']; ?>
                                                 </option>
                                                 <?php
                                                 $i++;
@@ -685,13 +686,11 @@ include "nav.html";
 <script type="text/javascript" src="assets/js/carousel.js"></script>
 <script type="text/javascript" src="assets/js/gmap3.min.js"></script>
 <script type="text/javascript" src="assets/js/gmap3.infobox.min.js"></script>
-<script type="text/javascript"
-        src="assets/libraries/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.chained.js"></script>
+<script type="text/javascript" src="assets/libraries/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>
 <script type="text/javascript" src="assets/libraries/chosen/chosen.jquery.min.js"></script>
 <script type="text/javascript" src="assets/libraries/iosslider/_src/jquery.iosslider.min.js"></script>
 <script type="text/javascript" src="assets/libraries/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 <script type="text/javascript" src="assets/js/realia.js"></script>
-<script type="javascript">
-    LoadMap
-</script>
+<script type="text/javascript" src="assets/js/maps.js"></script>
 </html>
