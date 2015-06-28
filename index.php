@@ -82,7 +82,6 @@ include 'proses/db_connect.php'
 <?php
 include "nav.html";
 ?>
-?>
 <!-- /.navigation -->
 
 <!-- CONTENT -->
@@ -177,7 +176,7 @@ include "nav.html";
                                     <!-- /.controls -->
                                 </div>
                                 <div class="form-actions">
-                                    <input type="submit" value="Cari" class="btn btn-primary btn-large">
+                                    <!--input type="submit" value="Cari" class="btn btn-primary btn-large"-->
                                 </div>
                                 <!-- /.form-actions -->
                             </form>
