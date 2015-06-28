@@ -204,13 +204,8 @@ function InitEzmark() {
 }
 
 function InitChosen() {
-	$('#kelurahan').chained('#kecamatan');
 	$('select').chosen({
 		disable_search_threshold: 10
-	});
-	
-	$('#kelurahan, #kecamatan').on('change', function(){
-		$('#kelurahan, #kecamatan').trigger("liszt:updated");
 	});
 }
 

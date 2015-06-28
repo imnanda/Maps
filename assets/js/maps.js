@@ -199,6 +199,11 @@ function InitMap() {
 
 // Listen Perubahan Value Select Kelurahan
 function ListenKelurahanSelect() {
+	$('#kelurahan').chained('#kecamatan');
+	$('#kelurahan, #kecamatan').on('change', function(){
+		$('#kelurahan, #kecamatan').trigger("liszt:updated");
+	});
+	
 	$("#kelurahan").on("change", function () {
 		if($(this).val() == '') return;
 		
