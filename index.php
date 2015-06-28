@@ -670,4 +670,9 @@ include "nav.html";
 <script type="text/javascript" src="assets/libraries/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 <script type="text/javascript" src="assets/js/realia.js"></script>
 <script type="text/javascript" src="assets/js/maps.js"></script>
+<script>
+$(function() {
+	loadUsaha('proses/daftar_usaha.php');
+});
+</script>
 </html>

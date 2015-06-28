@@ -98,7 +98,6 @@ function LoadMap(lokasi) {
 
 	map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-	loadUsaha('proses/daftar_usaha.php');
 }
 
 // Reset Marker dan Menambahkan Semua Marker dari Array Locations
